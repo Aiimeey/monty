@@ -1,4 +1,9 @@
 #include "monty.h"
+/**
+ * push - Pushes an integer onto the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 
 void push(stack_t **stack, unsigned int line_number)
 {
@@ -23,7 +28,11 @@ void push(stack_t **stack, unsigned int line_number)
 	*stack = new;
 
 }
-
+/**
+ * pall - Prints all elements of the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pall(stack_t **stack, unsigned int line_number)
 {
 
@@ -39,7 +48,11 @@ void pall(stack_t **stack, unsigned int line_number)
 		i++;
 	}
 }
-
+/**
+ * pint - Prints the value at the top of the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pint(stack_t **stack, unsigned int line_number)
 {
 	(void)line_number;
@@ -54,13 +67,21 @@ void pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 
 }
-
+/**
+ * nop - Does nothing
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void nop(stack_t **stack, unsigned int line_number)
 {
 	(void)stack;
 	(void)line_number;
 }
-
+/**
+ * pop - Removes the top element of the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
 void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *current = *stack;
