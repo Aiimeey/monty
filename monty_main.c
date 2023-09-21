@@ -6,10 +6,11 @@
  *
  * Return: 0 on successful execution or an exit code on failure
  */
+ char *n = NULL;
 int main(int argc, char **argv)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
-	char line[1024], *op_code, *n;
+	char line[1024], *op_code;
 	FILE *file;
 	int line_number = 0;
 	stack_t *stack = NULL;
@@ -39,7 +40,7 @@ int main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 		}
-		printf("%s",n);
+
 		f = get_func(op_code);
 		if (f != NULL)
 		{
