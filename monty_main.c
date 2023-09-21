@@ -1,5 +1,11 @@
 #include "monty.h"
-
+/**
+ * main - Entry point for the Monty bytecode interpreter
+ * @argc: The number of command-line arguments
+ * @argv: An array of strings containing the command-line arguments
+ *
+ * Return: 0 on successful execution or an exit code on failure
+ */
 int main(int argc, char **argv)
 {
 	void (*f)(stack_t **stack, unsigned int line_number);
@@ -33,6 +39,7 @@ int main(int argc, char **argv)
 				exit(EXIT_FAILURE);
 			}
 		}
+		printf("%s",n);
 		f = get_func(op_code);
 		if (f != NULL)
 		{
