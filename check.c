@@ -12,6 +12,9 @@ int is_numeric(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
+        if (str[0] == '-') 
+            continue;
+
 		if (!isdigit(str[i]))
 		{
 			return (EXIT_FAILURE);

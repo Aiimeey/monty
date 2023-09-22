@@ -28,6 +28,17 @@ int main(int argc, char **argv)
 		line_number++;
 		op_code = strtok(line, delimiter);
 
+do{
+		if (strcmp(op_code, "\n") == 0 || strcmp(op_code, "\t") == 0)
+		{
+			op_code = strtok(NULL, delimiter);
+		}
+		else 
+		break;
+}
+while(op_code);
+
+
 		if (unknown_op_error(op_code, line_number) != 0)
 			exit(EXIT_FAILURE);
 
