@@ -94,7 +94,7 @@ void mul(stack_t **stack, unsigned int line_number)
 
 
 /**
- * div - divides the top two elements of the stack
+ * diiv - divides the top two elements of the stack
  * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  */
@@ -119,4 +119,3 @@ void diiv(stack_t **stack, unsigned int line_number)
 	(*stack)->n = div;
 	free(current);
 }
-
