@@ -58,6 +58,7 @@ while(op_code);
 			f(&stack, line_number);
 		}
 	}
+	free(stack);
 	fclose(file);
 	return (0);
 }
