@@ -38,7 +38,8 @@ int unknown_op_error(char *op_code, int line_number)
 			&& strcmp(op_code, "add") != 0
 			&& strcmp(op_code, "nop") != 0
 			&& strcmp(op_code, "sub") != 0
-			&& strcmp(op_code, "mul") != 0)
+			&& strcmp(op_code, "mul") != 0
+			&& strcmp(op_code, "div") != 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
 		exit(EXIT_FAILURE);

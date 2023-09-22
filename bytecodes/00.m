@@ -1,2 +1,2 @@
-mul Holberton
-pall
+push 0
+div
