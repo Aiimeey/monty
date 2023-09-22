@@ -41,3 +41,14 @@ int add_error(int line_number)
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * sub_error - Prints an error message for an sub op with an insufficient stack
+ * @line_number: The line number in the Monty bytecode file
+ * Return: exit the program
+ */
+int sub_error(int line_number)
+{
+	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}

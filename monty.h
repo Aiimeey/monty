@@ -44,7 +44,6 @@ extern char *n;
 
 int usage_error(void);
 int f_open_error(char *file);
-int unknown_op_error(char *op_code, int line_number);
 int malloc_error(void);
 int no_int_error(int line_number);
 int pint_error(int line_number);
@@ -52,8 +51,10 @@ int int_error(int line_number);
 int pop_error(int line_number);
 int swap_error(int line_number);
 int add_error(int line_number);
+int sub_error(int line_number);
 
 int is_numeric(char *str);
+int unknown_op_error(char *op_code, int line_number);
 
 typedef void (*f)(stack_t **stack, unsigned int line_number);
 f get_func(char *op_code);
@@ -65,5 +66,6 @@ void pop(stack_t **stack, unsigned int line_number);
 void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
+void sub(stack_t **stack, unsigned int line_number);
 
 #endif

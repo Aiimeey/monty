@@ -45,3 +45,26 @@ void add(stack_t **stack, unsigned int line_number)
 	free(current);
 }
 
+/**
+ * sub - substract the top two elements of the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
+
+void sub(stack_t **stack, unsigned int line_number)
+{
+	int sub;
+	stack_t *current;
+
+	if (!*stack || !(*stack)->next)
+	{
+		sub_error(line_number);
+	}
+	current = *stack;
+
+	*stack = (*stack)->next;
+	sub = (*stack)->n - current->n;
+	(*stack)->n = sub;
+	free(current);
+}
+

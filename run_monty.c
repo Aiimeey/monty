@@ -17,6 +17,7 @@ f get_func(char *op_code)
 		{"swap", swap},
 		{"add", add},
 		{"nop", nop},
+		{"sub", sub},
 		{NULL, NULL}
 	};
 	int i;
