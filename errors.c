@@ -18,26 +18,7 @@ int f_open_error(char *file)
 	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
 }
-/**
- * unknown_op_error - Prints an error message for an unknown instruction
- * @op_code: The unknown instruction.
- * @line_number: The line number in the Monty bytecode file
- * Return: Exit on failure
- */
-int unknown_op_error(char *op_code, int line_number)
-{
-	if (strcmp(op_code, "push") != 0
-			&& strcmp(op_code, "pall") != 0
-			&& strcmp(op_code, "pint") != 0
-			&& strcmp(op_code, "nop") != 0
-			&& strcmp(op_code, "pop") != 0
-			&& strcmp(op_code, "swap") != 0)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
-		exit(EXIT_FAILURE);
-	}
-	return (0);
-}
+
 
 /**
  * int_error - Prints an error message for a push without an integer
@@ -59,3 +40,14 @@ int malloc_error(void)
 	exit(EXIT_FAILURE);
 }
 
+/**
+ * no_int_error - Prints an error message for push with a non-integer argument
+ * @line_number: The line number in the Monty bytecode file
+ * Return: exit the program.
+ */
+
+int no_int_error(int line_number)
+{
+	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	exit(EXIT_FAILURE);
+}

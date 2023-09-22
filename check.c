@@ -22,46 +22,26 @@ int is_numeric(char *str)
 	}
 	return (0);
 }
-
 /**
- * no_int_error - Prints an error message for push with a non-integer argument
+ * unknown_op_error - Prints an error message for an unknown instruction
+ * @op_code: The unknown instruction.
  * @line_number: The line number in the Monty bytecode file
- * Return: exit the program.
+ * Return: Exit on failure
  */
-
-int no_int_error(int line_number)
+int unknown_op_error(char *op_code, int line_number)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", line_number);
-	exit(EXIT_FAILURE);
-}
-/**
- * pint_error - Prints an error message for pint with an empty stack
- * @line_number: The line number in the Monty bytecode file
- * Return: exit the program
- */
-int pint_error(int line_number)
-{
-	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
-	exit(EXIT_FAILURE);
-}
-/**
- * pop_error - Prints an error message for pop with an empty stack
- * @line_number: The line number in the Monty bytecode file
- * Return: exit the program
- */
-int pop_error(int line_number)
-{
-	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
-	exit(EXIT_FAILURE);
+	if (strcmp(op_code, "push") != 0
+			&& strcmp(op_code, "pall") != 0
+			&& strcmp(op_code, "pint") != 0
+			&& strcmp(op_code, "pop") != 0
+			&& strcmp(op_code, "swap") != 0
+			&& strcmp(op_code, "add") != 0
+			&& strcmp(op_code, "nop") != 0)
+	{
+		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
+		exit(EXIT_FAILURE);
+	}
+	return (0);
 }
 
-/**
- * swap_error - Prints an error message for a swap with an insufficient stack
- * @line_number: The line number in the Monty bytecode file
- * Return: exit the program
- */
-int swap_error(int line_number)
-{
-	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
-	exit(EXIT_FAILURE);
-}
+
