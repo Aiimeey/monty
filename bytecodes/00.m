@@ -1,2 +1,2 @@
-sub Holberton
+mul Holberton
 pall

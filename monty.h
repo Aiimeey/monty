@@ -52,6 +52,7 @@ int pop_error(int line_number);
 int swap_error(int line_number);
 int add_error(int line_number);
 int sub_error(int line_number);
+int mul_error(int line_number);
 
 int is_numeric(char *str);
 int unknown_op_error(char *op_code, int line_number);
@@ -67,5 +68,6 @@ void swap(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void sub(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
 
 #endif

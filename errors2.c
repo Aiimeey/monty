@@ -52,3 +52,14 @@ int sub_error(int line_number)
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 	exit(EXIT_FAILURE);
 }
+
+/**
+ * mul_error - Prints an error message for a mul op with an insufficient stack
+ * @line_number: The line number in the Monty bytecode file
+ * Return: exit the program
+ */
+int mul_error(int line_number)
+{
+	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
+	exit(EXIT_FAILURE);
+}

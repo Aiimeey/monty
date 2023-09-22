@@ -68,3 +68,27 @@ void sub(stack_t **stack, unsigned int line_number)
 	free(current);
 }
 
+/**
+ * mul - multiplies the top two elements of the stack
+ * @stack: A pointer to the top of the stack
+ * @line_number: The line number in the Monty bytecode file
+ */
+
+void mul(stack_t **stack, unsigned int line_number)
+{
+	int mul;
+	stack_t *current;
+
+	if (!*stack || !(*stack)->next)
+	{
+		mul_error(line_number);
+	}
+
+	current = *stack;
+
+	*stack = (*stack)->next;
+	mul = (*stack)->n * current->n;
+	(*stack)->n = mul;
+	free(current);
+}
+

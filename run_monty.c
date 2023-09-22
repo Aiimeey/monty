@@ -18,6 +18,7 @@ f get_func(char *op_code)
 		{"add", add},
 		{"nop", nop},
 		{"sub", sub},
+		{"mul", mul},
 		{NULL, NULL}
 	};
 	int i;
