@@ -30,7 +30,8 @@ int unknown_op_error(char *op_code, int line_number)
 			&& strcmp(op_code, "pall") != 0
 			&& strcmp(op_code, "pint") != 0
 			&& strcmp(op_code, "nop") != 0
-			&& strcmp(op_code, "pop") != 0)
+			&& strcmp(op_code, "pop") != 0
+			&& strcmp(op_code, "swap") != 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
 		exit(EXIT_FAILURE);

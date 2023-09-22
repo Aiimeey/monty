@@ -50,6 +50,7 @@ int no_int_error(int line_number);
 int pint_error(int line_number);
 int int_error(int line_number);
 int pop_error(int line_number);
+int swap_error(int line_number);
 
 int is_numeric(char *str);
 
@@ -62,5 +63,6 @@ void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 
 #endif

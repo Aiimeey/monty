@@ -17,7 +17,6 @@ int main(int argc, char **argv)
 
 	if (argc != 2)
 		return (usage_error());
-
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 		return (f_open_error(argv[1]));

@@ -15,6 +15,7 @@ f get_func(char *op_code)
 		{"pint", pint},
 		{"nop", nop},
 		{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	int i;
