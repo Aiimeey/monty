@@ -47,17 +47,20 @@ int unknown_op_error(char *op_code, int line_number)
 	}
 	return (0);
 }
-
+/**
+ * free_stack - Frees a stack and its elements.
+ * @stack: A pointer to the top of the stack
+ */
 void free_stack(stack_t **stack)
 {
 	stack_t *temp;
 
 	while (*stack)
 	{
-	temp = *stack;
-    *stack = (*stack)->next;
-    free(temp);
-}
+		temp = *stack;
+		*stack = (*stack)->next;
+		free(temp);
+	}
 }
 
 
