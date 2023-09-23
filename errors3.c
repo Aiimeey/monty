@@ -42,3 +42,27 @@ int zero_error(stack_t **stack, int line_number)
 		free_stack(stack);
 	exit(EXIT_FAILURE);
 }
+/**
+ * pchar_empty_error - Handles the error when pchar from an empty stack
+ * @line_number: The line number where the error occurred
+ * Return: exit the program
+ */
+int pchar_empty_error(int line_number)
+{
+	fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
+	exit(EXIT_FAILURE);
+}
+/**
+ * pchar_range_error - Handles the error when pchar a value out of range
+ * @stack: A pointer to the stack data structure
+ * @line_number: The line number where the error occurred
+ * Return: exit the program
+ */
+int pchar_range_error(stack_t **stack, int line_number)
+{
+	fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+	if (*stack)
+		free_stack(stack);
+	exit(EXIT_FAILURE);
+
+}

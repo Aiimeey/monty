@@ -55,6 +55,8 @@ int mul_error(stack_t **stack, int line_number);
 int div_error(stack_t **stack, int line_number);
 int mod_error(stack_t **stack, int line_number);
 int zero_error(stack_t **stack, int line_number);
+int pchar_range_error(stack_t **stack, int line_number);
+int pchar_empty_error(int line_number);
 
 int is_numeric(char *str);
 int unknown_op_error(stack_t **stack, char *op_code, int line_number);
@@ -75,6 +77,7 @@ void sub(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void diiv(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
+void pchar(stack_t **stack, unsigned int line_number);
 
 char *opcode_check(char *op_code);
 #endif
