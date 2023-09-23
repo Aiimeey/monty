@@ -65,7 +65,12 @@ void free_stack(stack_t **stack)
 		free(temp);
 	}
 }
-
+/**
+ * opcode_check - Check and remove leading delimiter characters
+ * @op_code: The input string to be checked
+ *
+ * Return: A pointer to the modified string after removing leading delimiters
+ */
 char *opcode_check(char *op_code)
 {
 	char *delimiter = " \t\n";

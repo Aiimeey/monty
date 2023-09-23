@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	{ line_number++;
 		op_code = strtok(line, delimiter);
 
-		 if (strcmp(op_code, "#") == 0)
+		if (op_code[0] == '#')
 			continue;
 
 		op_code = opcode_check(op_code);
