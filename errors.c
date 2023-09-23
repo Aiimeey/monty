@@ -19,15 +19,16 @@ int f_open_error(char *file)
 	exit(EXIT_FAILURE);
 }
 
-
 /**
  * int_error - Prints an error message for a push without an integer
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program.
  */
-int int_error(int line_number)
+int int_error(stack_t **stack, int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	if (*stack)
+		free_stack(stack);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -44,13 +45,12 @@ int malloc_error(stack_t **stack)
 }
 
 /**
- * no_int_error - Prints an error message for push with a non-integer argument
+ * pint_error - Prints an error message for pint with an empty stack
  * @line_number: The line number in the Monty bytecode file
- * Return: exit the program.
+ * Return: exit the program
  */
-
-int no_int_error(int line_number)
+int pint_error(int line_number)
 {
-	fprintf(stderr, "L%d: usage: push integer\n", line_number);
+	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 	exit(EXIT_FAILURE);
 }

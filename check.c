@@ -28,7 +28,7 @@ int is_numeric(char *str)
  * @line_number: The line number in the Monty bytecode file
  * Return: Exit on failure
  */
-int unknown_op_error(char *op_code, int line_number)
+int unknown_op_error(stack_t **stack, char *op_code, int line_number)
 {
 	if (strcmp(op_code, "push") != 0
 			&& strcmp(op_code, "pall") != 0
@@ -43,6 +43,8 @@ int unknown_op_error(char *op_code, int line_number)
 			&& strcmp(op_code, "mod") != 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
+		if (*stack)
+			free_stack(stack);
 		exit(EXIT_FAILURE);
 	}
 	return (0);

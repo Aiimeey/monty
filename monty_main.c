@@ -32,13 +32,13 @@ int main(int argc, char **argv)
 				break;
 		} while (op_code);
 
-		if (unknown_op_error(op_code, line_number) != 0)
+		if (unknown_op_error(&stack, op_code, line_number) != 0)
 			exit(EXIT_FAILURE);
 
 		if (strcmp(op_code, "push") == 0)
 		{ n = strtok(NULL, delimiter);
 			if (n == NULL || is_numeric(n) != 0)
-			{ int_error(line_number);
+			{ int_error(&stack, line_number);
 				exit(EXIT_FAILURE);
 			} }
 		f = get_func(op_code);

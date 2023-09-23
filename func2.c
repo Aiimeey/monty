@@ -12,7 +12,7 @@ void swap(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		swap_error(line_number);
+		swap_error(stack, line_number);
 	}
 
 	current = (*stack)->next;
@@ -34,7 +34,7 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		add_error(line_number);
+		add_error(stack, line_number);
 	}
 
 	current = *stack;
@@ -58,7 +58,7 @@ void sub(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		sub_error(line_number);
+		sub_error(stack, line_number);
 	}
 	current = *stack;
 
@@ -81,7 +81,7 @@ void mul(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		mul_error(line_number);
+		mul_error(stack, line_number);
 	}
 
 	current = *stack;
@@ -106,7 +106,7 @@ void diiv(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		div_error(line_number);
+		div_error(stack, line_number);
 	}
 	if ((*stack)->n == 0)
 	{
