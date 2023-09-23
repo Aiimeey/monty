@@ -44,7 +44,7 @@ extern char *n;
 
 int usage_error(void);
 int f_open_error(char *file);
-int malloc_error(void);
+int malloc_error(stack_t **stack);
 int no_int_error(int line_number);
 int pint_error(int line_number);
 int int_error(int line_number);
@@ -55,7 +55,7 @@ int sub_error(int line_number);
 int mul_error(int line_number);
 int div_error(int line_number);
 int mod_error(int line_number);
-int zero_error(int line_number);
+int zero_error(stack_t **stack, int line_number);
 
 int is_numeric(char *str);
 int unknown_op_error(char *op_code, int line_number);

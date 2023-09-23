@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	new = malloc(sizeof(stack_t));
 	if (!new)
-		malloc_error();
+		malloc_error(stack);
 
 	new->prev = NULL;
 	new->n = atoi(n);

@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		if (f != NULL)
 			f(&stack, line_number);
 	}
-	free(stack);
+	if (!stack)
+		free(stack);
 	fclose(file);
-	return (0);
-}
+	return (0); }

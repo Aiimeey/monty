@@ -110,7 +110,7 @@ void diiv(stack_t **stack, unsigned int line_number)
 	}
 	if ((*stack)->n == 0)
 	{
-		zero_error(line_number);
+		zero_error(stack, line_number);
 	}
 	current = *stack;
 

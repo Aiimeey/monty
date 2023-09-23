@@ -34,11 +34,14 @@ int mod_error(int line_number)
 
 /**
  * zero_error - Prints a message for the division by zero error
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int zero_error(int line_number)
+int zero_error(stack_t **stack, int line_number)
 {
 	fprintf(stderr, "L%d: division by zero\n", line_number);
+	if (!*stack)
+		free(stack);
 	exit(EXIT_FAILURE);
 }

@@ -32,11 +32,14 @@ int int_error(int line_number)
 }
 /**
  * malloc_error - Prints an error message for a malloc failure
+ * @stack: A pointer to the top of the stack
  * Return: exit the program.
  */
-int malloc_error(void)
+int malloc_error(stack_t **stack)
 {
 	fprintf(stderr, "Error: malloc failed\n");
+	if (!*stack)
+		free(stack);
 	exit(EXIT_FAILURE);
 }
 
