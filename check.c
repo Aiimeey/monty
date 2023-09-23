@@ -66,5 +66,18 @@ void free_stack(stack_t **stack)
 	}
 }
 
+char *opcode_check(char *op_code)
+{
+	char *delimiter = " \t\n";
+		do {
+			if (strcmp(op_code, "\n") == 0 || strcmp(op_code, "\t") == 0)
+				op_code = strtok(NULL, delimiter);
+			else
+				break;
+		} while (op_code);
+
+		return (op_code);
+
+}
 
 
