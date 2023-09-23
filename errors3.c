@@ -3,6 +3,7 @@
 
 /**
  * div_error - Prints an error message for a div op with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
@@ -16,6 +17,7 @@ int div_error(stack_t **stack, int line_number)
 
 /**
  * mod_error - Prints an error message for a mod op with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */

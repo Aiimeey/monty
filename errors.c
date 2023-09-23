@@ -21,6 +21,7 @@ int f_open_error(char *file)
 
 /**
  * int_error - Prints an error message for a push without an integer
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program.
  */

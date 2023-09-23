@@ -24,6 +24,7 @@ int is_numeric(char *str)
 }
 /**
  * unknown_op_error - Prints an error message for an unknown instruction
+ * @stack: A pointer to the top of the stack
  * @op_code: The unknown instruction.
  * @line_number: The line number in the Monty bytecode file
  * Return: Exit on failure

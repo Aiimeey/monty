@@ -12,6 +12,7 @@ int pop_error(int line_number)
 
 /**
  * swap_error - Prints an error message for a swap with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
@@ -24,6 +25,7 @@ int swap_error(stack_t **stack, int line_number)
 }
 /**
  * add_error - Prints an error message for an add op with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
@@ -37,6 +39,7 @@ int add_error(stack_t **stack, int line_number)
 
 /**
  * sub_error - Prints an error message for an sub op with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
@@ -50,6 +53,7 @@ int sub_error(stack_t **stack, int line_number)
 
 /**
  * mul_error - Prints an error message for a mul op with an insufficient stack
+ * @stack: A pointer to the top of the stack
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
