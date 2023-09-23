@@ -59,6 +59,8 @@ int zero_error(stack_t **stack, int line_number);
 
 int is_numeric(char *str);
 int unknown_op_error(char *op_code, int line_number);
+void free_stack(stack_t **stack);
+void free_stack_main(stack_t *stack);
 
 typedef void (*f)(stack_t **stack, unsigned int line_number);
 f get_func(char *op_code);

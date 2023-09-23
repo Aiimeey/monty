@@ -38,8 +38,8 @@ int int_error(int line_number)
 int malloc_error(stack_t **stack)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	if (!*stack)
-		free(stack);
+	if (*stack)
+		free_stack(stack);
 	exit(EXIT_FAILURE);
 }
 

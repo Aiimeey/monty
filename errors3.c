@@ -41,7 +41,7 @@ int mod_error(int line_number)
 int zero_error(stack_t **stack, int line_number)
 {
 	fprintf(stderr, "L%d: division by zero\n", line_number);
-	if (!*stack)
-		free(stack);
+	if (*stack)
+		free_stack(stack);
 	exit(EXIT_FAILURE);
 }
