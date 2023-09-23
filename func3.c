@@ -113,3 +113,34 @@ void rotl(stack_t **stack, unsigned int line_number)
 	free(current);
 
 }
+
+/**
+ * rotr - Rotate the stack to the bottom
+ * @stack: A pointer to the stack data structure
+ * @line_number: The line number where the rotr operation is called (unused)
+ */
+void rotr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+
+	(void)line_number;
+
+	if (!(*stack) || !(*stack)->next)
+	{
+		return;
+	}
+
+	current = *stack;
+	while (current->next)
+		current = current->next;
+
+	current->next = *stack;
+	(*stack)->prev = current;
+
+	*stack = current;
+	current = current->prev;
+
+	current->next = NULL;
+	(*stack)->prev = NULL;
+
+}

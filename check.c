@@ -44,7 +44,8 @@ int unknown_op_error(stack_t **stack, char *op_code, int line_number)
 			&& strcmp(op_code, "mod") != 0
 			&& strcmp(op_code, "pchar") != 0
 			&& strcmp(op_code, "pstr") != 0
-			&& strcmp(op_code, "rotl") != 0)
+			&& strcmp(op_code, "rotl") != 0
+			&& strcmp(op_code, "rotr") != 0)
 	{
 		fprintf(stderr, "L%d: unknown instruction %s\n", line_number, op_code);
 		if (*stack)
