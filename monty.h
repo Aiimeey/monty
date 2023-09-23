@@ -61,7 +61,6 @@ int pchar_empty_error(int line_number);
 int is_numeric(char *str);
 int unknown_op_error(stack_t **stack, char *op_code, int line_number);
 void free_stack(stack_t **stack);
-void free_stack_main(stack_t *stack);
 
 typedef void (*f)(stack_t **stack, unsigned int line_number);
 f get_func(char *op_code);
@@ -78,6 +77,7 @@ void mul(stack_t **stack, unsigned int line_number);
 void diiv(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 void pchar(stack_t **stack, unsigned int line_number);
+void pstr(stack_t **stack, unsigned int line_number);
 
 char *opcode_check(char *op_code);
 #endif

@@ -22,6 +22,7 @@ f get_func(char *op_code)
 		{"div", diiv},
 		{"mod", mod},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	int i;

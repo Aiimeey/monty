@@ -47,3 +47,28 @@ void pchar(stack_t **stack, unsigned int line_number)
 	}
 
 }
+/**
+ * pstr - Print characters from the stack until a non-printable
+ * @stack: A pointer to the stack data structure
+ * @line_number: The line number where the pstr operation is called (unused)
+ * Return : void
+ */
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current;
+	(void)line_number;
+	if (!*stack)
+	{
+		putchar('\n');
+		return;
+	}
+
+	current = *stack;
+	while (current && current->n != 0 &&
+			((current->n >= 65 && current->n <= 90)
+			 || (current->n >= 97 && current->n <= 122)))
+		putchar(current->n);
+
+	putchar ('\n');
+
+}
