@@ -51,7 +51,6 @@ void pchar(stack_t **stack, unsigned int line_number)
  * pstr - Print characters from the stack until a non-printable
  * @stack: A pointer to the stack data structure
  * @line_number: The line number where the pstr operation is called (unused)
- * Return : void
  */
 void pstr(stack_t **stack, unsigned int line_number)
 {
@@ -73,5 +72,44 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 
 	putchar ('\n');
+
+}
+/**
+ * rotl - Rotate the stack to the top
+ * @stack: A pointer to the stack data structure
+ * @line_number: The line number where the rotl operation is called (unused)
+ */
+void rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t *current, *new;
+
+	(void)line_number;
+
+	if (!(*stack) || !(*stack)->next)
+	{
+		return;
+	}
+
+	new = malloc(sizeof(stack_t));
+	if (!new)
+		malloc_error(stack);
+
+	new->n = (*stack)->n;
+	new->next = NULL;
+	new->prev = NULL;
+
+	current = *stack;
+	while (current->next)
+	{
+		current = current->next;
+	}
+
+	current->next = new;
+	new->prev = current;
+
+
+	current = *stack;
+	*stack = (*stack)->next;
+	free(current);
 
 }

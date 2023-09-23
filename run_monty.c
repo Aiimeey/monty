@@ -23,6 +23,7 @@ f get_func(char *op_code)
 		{"mod", mod},
 		{"pchar", pchar},
 		{"pstr", pstr},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	int i;
