@@ -69,7 +69,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 			 || (current->n >= 97 && current->n <= 122)))
 	{
 		putchar(current->n);
-		current = current->n;
+		current = current->next;
 	}
 
 	putchar ('\n');
