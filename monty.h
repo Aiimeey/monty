@@ -61,9 +61,13 @@ int pchar_empty_error(unsigned int line_number);
 int is_numeric(char *str);
 int unknown_op_error(stack_t **stack, char *op_code, unsigned int line_number);
 void free_stack(stack_t **stack);
+char *opcode_check(char *op_code);
+int switch_mode(char *op_code);
 
 typedef void (*f)(stack_t **stack, unsigned int line_number);
 f get_func(char *op_code);
+void queu(stack_t **stack, unsigned int line_number);
+char *push_check(char *op_code, stack_t **stack, int mode, int line_number);
 
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
@@ -81,5 +85,5 @@ void pstr(stack_t **stack, unsigned int line_number);
 void rotl(stack_t **stack, unsigned int line_number);
 void rotr(stack_t **stack, unsigned int line_number);
 
-char *opcode_check(char *op_code);
+
 #endif

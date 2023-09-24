@@ -78,13 +78,32 @@ void free_stack(stack_t **stack)
 char *opcode_check(char *op_code)
 {
 	char *delimiter = " \t\n";
-		do {
-			if (strcmp(op_code, "\n") == 0 || strcmp(op_code, "\t") == 0)
-				op_code = strtok(NULL, delimiter);
-			else
-				break;
-		} while (op_code);
 
-		return (op_code);
+	do {
+		if (strcmp(op_code, "\n") == 0 || strcmp(op_code, "\t") == 0)
+			op_code = strtok(NULL, delimiter);
+		else
+			break;
+	} while (op_code);
+
+	return (op_code);
+
+}
+/**
+ * switch_mode - Determines the operating mode based on the input opcode
+ * @op_code: A pointer to a null-terminated string containing the opcode
+ * Return: The determined operating mode (0 for "stack" and 1 for "queue")
+ */
+int switch_mode(char *op_code)
+{
+	int mode;
+
+	if (strcmp(op_code, "stack") == 0)
+		mode = 0;
+
+	if (strcmp(op_code, "queue") == 0)
+		mode = 1;
+
+	return (mode);
 
 }

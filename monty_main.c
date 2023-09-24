@@ -12,7 +12,7 @@ int main(int argc, char **argv)
 	void (*f)(stack_t **stack, unsigned int line_number);
 	char line[1024], *op_code, *delimiter = " \t\n";
 	FILE *file;
-	int line_number = 0;
+	int line_number = 0, mode = 0;
 	stack_t *stack = NULL;
 
 	if (argc != 2)
@@ -28,17 +28,19 @@ int main(int argc, char **argv)
 		if (op_code[0] == '#')
 			continue;
 
+		if (strcmp(op_code, "stack") == 0 || strcmp(op_code, "queue") == 0)
+		{
+			mode = switch_mode(op_code);
+			continue;
+		}
+
 		op_code = opcode_check(op_code);
 
 		if (unknown_op_error(&stack, op_code, line_number) != 0)
 			exit(EXIT_FAILURE);
 
-		if (strcmp(op_code, "push") == 0)
-		{ n = strtok(NULL, delimiter);
-			if (n == NULL || is_numeric(n) != 0)
-			{ int_error(&stack, line_number);
-				exit(EXIT_FAILURE);
-			} }
+	push_check(op_code, &stack, mode, line_number);
+
 		f = get_func(op_code);
 		if (f != NULL)
 			f(&stack, line_number);
