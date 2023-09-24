@@ -29,7 +29,7 @@ int is_numeric(char *str)
  * @line_number: The line number in the Monty bytecode file
  * Return: Exit on failure
  */
-int unknown_op_error(stack_t **stack, char *op_code, int line_number)
+int unknown_op_error(stack_t **stack, char *op_code, unsigned int line_number)
 {
 	if (strcmp(op_code, "push") != 0
 			&& strcmp(op_code, "pall") != 0
@@ -88,5 +88,3 @@ char *opcode_check(char *op_code)
 		return (op_code);
 
 }
-
-

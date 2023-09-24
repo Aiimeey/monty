@@ -7,7 +7,7 @@
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int div_error(stack_t **stack, int line_number)
+int div_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't div, stack too short\n", line_number);
 	if (*stack)
@@ -21,7 +21,7 @@ int div_error(stack_t **stack, int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int mod_error(stack_t **stack, int line_number)
+int mod_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't mod, stack too short\n", line_number);
 	if (*stack)
@@ -35,7 +35,7 @@ int mod_error(stack_t **stack, int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int zero_error(stack_t **stack, int line_number)
+int zero_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: division by zero\n", line_number);
 	if (*stack)
@@ -47,7 +47,7 @@ int zero_error(stack_t **stack, int line_number)
  * @line_number: The line number where the error occurred
  * Return: exit the program
  */
-int pchar_empty_error(int line_number)
+int pchar_empty_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pchar, stack empty\n", line_number);
 	exit(EXIT_FAILURE);
@@ -58,7 +58,7 @@ int pchar_empty_error(int line_number)
  * @line_number: The line number where the error occurred
  * Return: exit the program
  */
-int pchar_range_error(stack_t **stack, int line_number)
+int pchar_range_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
 	if (*stack)

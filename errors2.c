@@ -4,7 +4,7 @@
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int pop_error(int line_number)
+int pop_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pop an empty stack\n", line_number);
 	exit(EXIT_FAILURE);
@@ -16,7 +16,7 @@ int pop_error(int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int swap_error(stack_t **stack, int line_number)
+int swap_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 	if (*stack)
@@ -29,7 +29,7 @@ int swap_error(stack_t **stack, int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int add_error(stack_t **stack, int line_number)
+int add_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't add, stack too short\n", line_number);
 	if (*stack)
@@ -43,7 +43,7 @@ int add_error(stack_t **stack, int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int sub_error(stack_t **stack, int line_number)
+int sub_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't sub, stack too short\n", line_number);
 	if (*stack)
@@ -57,7 +57,7 @@ int sub_error(stack_t **stack, int line_number)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int mul_error(stack_t **stack, int line_number)
+int mul_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't mul, stack too short\n", line_number);
 	if (*stack)

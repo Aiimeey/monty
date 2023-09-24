@@ -25,7 +25,7 @@ int f_open_error(char *file)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program.
  */
-int int_error(stack_t **stack, int line_number)
+int int_error(stack_t **stack, unsigned int line_number)
 {
 	fprintf(stderr, "L%d: usage: push integer\n", line_number);
 	if (*stack)
@@ -50,7 +50,7 @@ int malloc_error(stack_t **stack)
  * @line_number: The line number in the Monty bytecode file
  * Return: exit the program
  */
-int pint_error(int line_number)
+int pint_error(unsigned int line_number)
 {
 	fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
 	exit(EXIT_FAILURE);
