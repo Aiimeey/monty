@@ -90,8 +90,10 @@ char *push_check(char *op_code, stack_t **stack, int mode, int line_number)
 
 	if (strcmp(op_code, "push") == 0)
 	{
-		n = strtok(NULL, delimiter);
+		if (mode == 1)
+			strcpy(op_code, "queu");
 
+		n = strtok(NULL, delimiter);
 
 		if (n == NULL || is_numeric(n) != 0)
 		{
@@ -99,9 +101,6 @@ char *push_check(char *op_code, stack_t **stack, int mode, int line_number)
 			exit(EXIT_FAILURE);
 		}
 	}
-			if (mode == 1)
-			strcpy(op_code, "queu");
 
 	return (op_code);
 }
-

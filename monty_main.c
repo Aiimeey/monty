@@ -39,7 +39,7 @@ int main(int argc, char **argv)
 		if (unknown_op_error(&stack, op_code, line_number) != 0)
 			exit(EXIT_FAILURE);
 
-	push_check(op_code, &stack, mode, line_number);
+	op_code = push_check(op_code, &stack, mode, line_number);
 
 		f = get_func(op_code);
 		if (f != NULL)
