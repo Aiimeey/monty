@@ -1,8 +1,4 @@
-stack
+push 402
 push 98
-push 343
-queue 
-push 2
-stack
-push 1
+div Holberton
 pall

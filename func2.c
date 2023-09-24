@@ -115,7 +115,7 @@ void diiv(stack_t **stack, unsigned int line_number)
 	current = *stack;
 
 	*stack = (*stack)->next;
-	div = (*stack)->n - current->n;
+	div = (*stack)->n / current->n;
 	(*stack)->n = div;
 	free(current);
 }
